@@ -33,14 +33,14 @@ namespace FP91906
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.treeTop = new System.Windows.Forms.PictureBox();
             this.treeBottom = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.grass = new System.Windows.Forms.PictureBox();
             this.pinecone = new System.Windows.Forms.PictureBox();
             this.textScore = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.treeTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.treeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeBottom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,15 +64,15 @@ namespace FP91906
             this.treeBottom.TabIndex = 1;
             this.treeBottom.TabStop = false;
             // 
-            // pictureBox3
+            // grass
             // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(-4, 658);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(720, 200);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.grass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grass.BackgroundImage")));
+            this.grass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grass.Location = new System.Drawing.Point(-4, 681);
+            this.grass.Name = "grass";
+            this.grass.Size = new System.Drawing.Size(720, 232);
+            this.grass.TabIndex = 2;
+            this.grass.TabStop = false;
             // 
             // pinecone
             // 
@@ -98,13 +98,13 @@ namespace FP91906
             // gameTimer
             // 
             this.gameTimer.Enabled = true;
-            this.gameTimer.Interval = 20;
+            this.gameTimer.Interval = 25;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
             // 
             // treeTimer
             // 
             this.treeTimer.Enabled = true;
-            this.treeTimer.Interval = 5;
+            this.treeTimer.Interval = 10;
             this.treeTimer.Tick += new System.EventHandler(this.treeTimerEvent);
             // 
             // Form1
@@ -113,18 +113,18 @@ namespace FP91906
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(702, 752);
+            this.Controls.Add(this.grass);
             this.Controls.Add(this.pinecone);
             this.Controls.Add(this.textScore);
             this.Controls.Add(this.treeTop);
             this.Controls.Add(this.treeBottom);
-            this.Controls.Add(this.pictureBox3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.treeTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeBottom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,7 +135,7 @@ namespace FP91906
 
         private System.Windows.Forms.PictureBox treeTop;
         private System.Windows.Forms.PictureBox treeBottom;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox grass;
         private System.Windows.Forms.PictureBox pinecone;
         private System.Windows.Forms.Label textScore;
         private System.Windows.Forms.Timer gameTimer;

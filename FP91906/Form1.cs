@@ -13,7 +13,7 @@ namespace FP91906
     public partial class Form1 : Form
     {
         int treeSpeed = 4;
-        int gravity = 15;
+        int gravity = 10;
         int score = 0;
 
         public Form1()
@@ -24,6 +24,12 @@ namespace FP91906
         private void gameTimerEvent(object sender, EventArgs e)
         {
             pinecone.Top += gravity;
+            if (pinecone.Bounds.IntersectsWith(treeBottom.Bounds) ||
+                pinecone.Bounds.IntersectsWith(treeTop.Bounds) ||
+                pinecone.Bounds.IntersectsWith(grass.Bounds) || pinecone.Top < -25)
+            {
+                endGame();
+            }
         }
         private void treeTimerEvent(object sender, EventArgs e)
         {
@@ -46,15 +52,21 @@ namespace FP91906
         {
             if (e.KeyCode == Keys.Space)
             {
-                gravity = -15;
+                gravity = -10;
             }
         }
         private void gameKeyIsUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space)
             {
-                gravity = 15;
+                gravity = 10;
             }
+        }
+        private void endGame()
+        {
+            gameTimer.Stop();
+            treeTimer.Stop();
+            textScore.Text += "\nGame over";
         }
     }
 }
