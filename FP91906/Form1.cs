@@ -27,7 +27,20 @@ namespace FP91906
         }
         private void treeTimerEvent(object sender, EventArgs e)
         {
+            treeBottom.Left -= treeSpeed;
+            treeTop.Left -= treeSpeed;
 
+
+            textScore.Text = "Score: " + score;
+            if (treeBottom.Left < -150)
+            {
+                treeBottom.Left = 800;
+            }
+            if (treeTop.Left < -150)
+            {
+                treeTop.Left = 800;
+                score++;
+            }
         }
         private void gameKeyIsDown(object sender, KeyEventArgs e)
         {
