@@ -38,14 +38,18 @@ namespace FP91906
 
 
             textScore.Text = "Score: " + score;
-            if (treeBottom.Left < -150)
+            if (treeBottom.Left <= -182)
             {
-                treeBottom.Left = 800;
+                treeBottom.Left = 810;
             }
-            if (treeTop.Left < -150)
+            if (treeTop.Left <= -182)
             {
-                treeTop.Left = 800;
+                treeTop.Left = 810;
                 score++;
+            }
+            if (score % 2 == 0 && !(score == 0))
+            {
+                treeSpeed = treeSpeed + 25/100;
             }
         }
         private void gameKeyIsDown(object sender, KeyEventArgs e)
