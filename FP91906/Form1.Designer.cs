@@ -33,49 +33,40 @@ namespace FP91906
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.treeTop = new System.Windows.Forms.PictureBox();
             this.treeBottom = new System.Windows.Forms.PictureBox();
-            this.grass = new System.Windows.Forms.PictureBox();
             this.pinecone = new System.Windows.Forms.PictureBox();
             this.textScore = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.treeTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.treeTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeBottom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).BeginInit();
             this.SuspendLayout();
             // 
             // treeTop
             // 
+            this.treeTop.BackColor = System.Drawing.Color.Transparent;
             this.treeTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("treeTop.BackgroundImage")));
             this.treeTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.treeTop.Location = new System.Drawing.Point(472, -2);
+            this.treeTop.Location = new System.Drawing.Point(512, -234);
             this.treeTop.Name = "treeTop";
-            this.treeTop.Size = new System.Drawing.Size(181, 246);
+            this.treeTop.Size = new System.Drawing.Size(65, 462);
             this.treeTop.TabIndex = 0;
             this.treeTop.TabStop = false;
             // 
             // treeBottom
             // 
+            this.treeBottom.BackColor = System.Drawing.Color.Transparent;
             this.treeBottom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("treeBottom.BackgroundImage")));
             this.treeBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.treeBottom.Location = new System.Drawing.Point(472, 436);
+            this.treeBottom.Location = new System.Drawing.Point(512, 427);
             this.treeBottom.Name = "treeBottom";
-            this.treeBottom.Size = new System.Drawing.Size(181, 246);
+            this.treeBottom.Size = new System.Drawing.Size(65, 501);
             this.treeBottom.TabIndex = 1;
             this.treeBottom.TabStop = false;
             // 
-            // grass
-            // 
-            this.grass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grass.BackgroundImage")));
-            this.grass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.grass.Location = new System.Drawing.Point(-4, 681);
-            this.grass.Name = "grass";
-            this.grass.Size = new System.Drawing.Size(720, 232);
-            this.grass.TabIndex = 2;
-            this.grass.TabStop = false;
-            // 
             // pinecone
             // 
+            this.pinecone.BackColor = System.Drawing.Color.Transparent;
             this.pinecone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pinecone.BackgroundImage")));
             this.pinecone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pinecone.Location = new System.Drawing.Point(118, 306);
@@ -89,7 +80,7 @@ namespace FP91906
             this.textScore.AutoSize = true;
             this.textScore.BackColor = System.Drawing.Color.Transparent;
             this.textScore.Font = new System.Drawing.Font("Goudy Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textScore.Location = new System.Drawing.Point(12, 257);
+            this.textScore.Location = new System.Drawing.Point(12, 338);
             this.textScore.Name = "textScore";
             this.textScore.Size = new System.Drawing.Size(46, 19);
             this.textScore.TabIndex = 4;
@@ -104,16 +95,16 @@ namespace FP91906
             // treeTimer
             // 
             this.treeTimer.Enabled = true;
-            this.treeTimer.Interval = 10;
+            this.treeTimer.Interval = 15;
             this.treeTimer.Tick += new System.EventHandler(this.treeTimerEvent);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aqua;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(702, 752);
-            this.Controls.Add(this.grass);
             this.Controls.Add(this.pinecone);
             this.Controls.Add(this.textScore);
             this.Controls.Add(this.treeTop);
@@ -124,7 +115,6 @@ namespace FP91906
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.treeTop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeBottom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,7 +125,6 @@ namespace FP91906
 
         private System.Windows.Forms.PictureBox treeTop;
         private System.Windows.Forms.PictureBox treeBottom;
-        private System.Windows.Forms.PictureBox grass;
         private System.Windows.Forms.PictureBox pinecone;
         private System.Windows.Forms.Label textScore;
         private System.Windows.Forms.Timer gameTimer;
