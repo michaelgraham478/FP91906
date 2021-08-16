@@ -79,10 +79,10 @@ namespace FP91906
             // 
             this.textScore.AutoSize = true;
             this.textScore.BackColor = System.Drawing.Color.Transparent;
-            this.textScore.Font = new System.Drawing.Font("Goudy Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textScore.Location = new System.Drawing.Point(12, 338);
+            this.textScore.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textScore.Location = new System.Drawing.Point(118, 284);
             this.textScore.Name = "textScore";
-            this.textScore.Size = new System.Drawing.Size(46, 19);
+            this.textScore.Size = new System.Drawing.Size(70, 22);
             this.textScore.TabIndex = 4;
             this.textScore.Text = "Score:";
             // 
@@ -104,9 +104,9 @@ namespace FP91906
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(702, 752);
-            this.Controls.Add(this.pinecone);
+            this.ClientSize = new System.Drawing.Size(702, 735);
             this.Controls.Add(this.textScore);
+            this.Controls.Add(this.pinecone);
             this.Controls.Add(this.treeTop);
             this.Controls.Add(this.treeBottom);
             this.Name = "Form1";
