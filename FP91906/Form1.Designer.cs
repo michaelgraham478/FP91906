@@ -31,51 +31,52 @@ namespace FP91906
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.treeTop = new System.Windows.Forms.PictureBox();
-            this.treeBottom = new System.Windows.Forms.PictureBox();
+            this.logTop = new System.Windows.Forms.PictureBox();
+            this.logBottom = new System.Windows.Forms.PictureBox();
             this.pinecone = new System.Windows.Forms.PictureBox();
-            this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            this.treeTimer = new System.Windows.Forms.Timer(this.components);
-            this.treeTop2 = new System.Windows.Forms.PictureBox();
-            this.treeBottom2 = new System.Windows.Forms.PictureBox();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
+            this.TreeTimer = new System.Windows.Forms.Timer(this.components);
+            this.logTop2 = new System.Windows.Forms.PictureBox();
+            this.logBottom2 = new System.Windows.Forms.PictureBox();
             this.RestartBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.ExitBtn2 = new System.Windows.Forms.Button();
+            this.StartBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.scoreTxt = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.panelShadow = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.Countdown = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.treeTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeBottom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeTop2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeBottom2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logTop2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logBottom2)).BeginInit();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // treeTop
+            // logTop
             // 
-            this.treeTop.BackColor = System.Drawing.Color.Transparent;
-            this.treeTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("treeTop.BackgroundImage")));
-            this.treeTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.treeTop.Location = new System.Drawing.Point(449, -236);
-            this.treeTop.Name = "treeTop";
-            this.treeTop.Size = new System.Drawing.Size(85, 462);
-            this.treeTop.TabIndex = 0;
-            this.treeTop.TabStop = false;
+            this.logTop.BackColor = System.Drawing.Color.Transparent;
+            this.logTop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logTop.BackgroundImage")));
+            this.logTop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logTop.Location = new System.Drawing.Point(449, -236);
+            this.logTop.Name = "logTop";
+            this.logTop.Size = new System.Drawing.Size(85, 462);
+            this.logTop.TabIndex = 0;
+            this.logTop.TabStop = false;
             // 
-            // treeBottom
+            // logBottom
             // 
-            this.treeBottom.BackColor = System.Drawing.Color.Transparent;
-            this.treeBottom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("treeBottom.BackgroundImage")));
-            this.treeBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.treeBottom.Location = new System.Drawing.Point(449, 425);
-            this.treeBottom.Name = "treeBottom";
-            this.treeBottom.Size = new System.Drawing.Size(85, 501);
-            this.treeBottom.TabIndex = 1;
-            this.treeBottom.TabStop = false;
+            this.logBottom.BackColor = System.Drawing.Color.Transparent;
+            this.logBottom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logBottom.BackgroundImage")));
+            this.logBottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logBottom.Location = new System.Drawing.Point(449, 425);
+            this.logBottom.Name = "logBottom";
+            this.logBottom.Size = new System.Drawing.Size(85, 501);
+            this.logBottom.TabIndex = 1;
+            this.logBottom.TabStop = false;
             // 
             // pinecone
             // 
@@ -88,39 +89,39 @@ namespace FP91906
             this.pinecone.TabIndex = 3;
             this.pinecone.TabStop = false;
             // 
-            // gameTimer
+            // GameTimer
             // 
-            this.gameTimer.Enabled = true;
-            this.gameTimer.Interval = 22;
-            this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
+            this.GameTimer.Enabled = true;
+            this.GameTimer.Interval = 22;
+            this.GameTimer.Tick += new System.EventHandler(this.GameTimerEvent);
             // 
-            // treeTimer
+            // TreeTimer
             // 
-            this.treeTimer.Enabled = true;
-            this.treeTimer.Interval = 15;
-            this.treeTimer.Tick += new System.EventHandler(this.treeTimerEvent);
+            this.TreeTimer.Enabled = true;
+            this.TreeTimer.Interval = 15;
+            this.TreeTimer.Tick += new System.EventHandler(this.TreeTimerEvent);
             // 
-            // treeTop2
+            // logTop2
             // 
-            this.treeTop2.BackColor = System.Drawing.Color.Transparent;
-            this.treeTop2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("treeTop2.BackgroundImage")));
-            this.treeTop2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.treeTop2.Location = new System.Drawing.Point(926, -280);
-            this.treeTop2.Name = "treeTop2";
-            this.treeTop2.Size = new System.Drawing.Size(85, 462);
-            this.treeTop2.TabIndex = 5;
-            this.treeTop2.TabStop = false;
+            this.logTop2.BackColor = System.Drawing.Color.Transparent;
+            this.logTop2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logTop2.BackgroundImage")));
+            this.logTop2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logTop2.Location = new System.Drawing.Point(926, -280);
+            this.logTop2.Name = "logTop2";
+            this.logTop2.Size = new System.Drawing.Size(85, 462);
+            this.logTop2.TabIndex = 5;
+            this.logTop2.TabStop = false;
             // 
-            // treeBottom2
+            // logBottom2
             // 
-            this.treeBottom2.BackColor = System.Drawing.Color.Transparent;
-            this.treeBottom2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("treeBottom2.BackgroundImage")));
-            this.treeBottom2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.treeBottom2.Location = new System.Drawing.Point(926, 381);
-            this.treeBottom2.Name = "treeBottom2";
-            this.treeBottom2.Size = new System.Drawing.Size(85, 501);
-            this.treeBottom2.TabIndex = 6;
-            this.treeBottom2.TabStop = false;
+            this.logBottom2.BackColor = System.Drawing.Color.Transparent;
+            this.logBottom2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logBottom2.BackgroundImage")));
+            this.logBottom2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logBottom2.Location = new System.Drawing.Point(926, 381);
+            this.logBottom2.Name = "logBottom2";
+            this.logBottom2.Size = new System.Drawing.Size(85, 501);
+            this.logBottom2.TabIndex = 6;
+            this.logBottom2.TabStop = false;
             // 
             // RestartBtn
             // 
@@ -153,6 +154,8 @@ namespace FP91906
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.White;
+            this.panel.Controls.Add(this.ExitBtn2);
+            this.panel.Controls.Add(this.StartBtn);
             this.panel.Controls.Add(this.label1);
             this.panel.Controls.Add(this.scoreTxt);
             this.panel.Controls.Add(this.title);
@@ -161,6 +164,34 @@ namespace FP91906
             this.panel.Size = new System.Drawing.Size(531, 493);
             this.panel.TabIndex = 9;
             this.panel.Visible = false;
+            // 
+            // ExitBtn2
+            // 
+            this.ExitBtn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(238)))), ((int)(((byte)(184)))));
+            this.ExitBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExitBtn2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExitBtn2.Location = new System.Drawing.Point(202, 355);
+            this.ExitBtn2.Name = "ExitBtn2";
+            this.ExitBtn2.Size = new System.Drawing.Size(115, 40);
+            this.ExitBtn2.TabIndex = 13;
+            this.ExitBtn2.Text = "Exit";
+            this.ExitBtn2.UseVisualStyleBackColor = false;
+            this.ExitBtn2.Visible = false;
+            this.ExitBtn2.Click += new System.EventHandler(this.ExitBtn2_Click);
+            // 
+            // StartBtn
+            // 
+            this.StartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(238)))), ((int)(((byte)(184)))));
+            this.StartBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StartBtn.Location = new System.Drawing.Point(202, 300);
+            this.StartBtn.Name = "StartBtn";
+            this.StartBtn.Size = new System.Drawing.Size(115, 40);
+            this.StartBtn.TabIndex = 12;
+            this.StartBtn.Text = "Start";
+            this.StartBtn.UseVisualStyleBackColor = false;
+            this.StartBtn.Visible = false;
+            this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
             // 
             // label1
             // 
@@ -202,20 +233,6 @@ namespace FP91906
             this.panelShadow.TabIndex = 10;
             this.panelShadow.Visible = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(779, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "3";
-            // 
-            // Countdown
-            // 
-            this.Countdown.Interval = 1000;
-            this.Countdown.Tick += new System.EventHandler(this.Countdown_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -223,40 +240,38 @@ namespace FP91906
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(961, 735);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.RestartBtn);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.pinecone);
-            this.Controls.Add(this.treeTop2);
-            this.Controls.Add(this.treeBottom2);
-            this.Controls.Add(this.treeTop);
-            this.Controls.Add(this.treeBottom);
+            this.Controls.Add(this.logTop2);
+            this.Controls.Add(this.logBottom2);
+            this.Controls.Add(this.logTop);
+            this.Controls.Add(this.logBottom);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
-            ((System.ComponentModel.ISupportInitialize)(this.treeTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeBottom)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameKeyIsDown);
+            ((System.ComponentModel.ISupportInitialize)(this.logTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logBottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeTop2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeBottom2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logTop2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logBottom2)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox treeTop;
-        private System.Windows.Forms.PictureBox treeBottom;
+        private System.Windows.Forms.PictureBox logTop;
+        private System.Windows.Forms.PictureBox logBottom;
         private System.Windows.Forms.PictureBox pinecone;
-        private System.Windows.Forms.Timer gameTimer;
-        private System.Windows.Forms.Timer treeTimer;
-        private System.Windows.Forms.PictureBox treeTop2;
-        private System.Windows.Forms.PictureBox treeBottom2;
+        private System.Windows.Forms.Timer GameTimer;
+        private System.Windows.Forms.Timer TreeTimer;
+        private System.Windows.Forms.PictureBox logTop2;
+        private System.Windows.Forms.PictureBox logBottom2;
         private System.Windows.Forms.Button RestartBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Panel panel;
@@ -264,8 +279,9 @@ namespace FP91906
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label scoreTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer Countdown;
+        private System.Windows.Forms.Button StartBtn;
+        private System.Windows.Forms.Button ExitBtn2;
     }
 }
 

@@ -16,65 +16,68 @@ namespace FP91906
         int velocity = 0;
         int acceleration = 1;
 
-        int timer = 3;
-        readonly int treeSpeed = 4;
+        int timerVal = 3;
+        int logSpeed = 4;
         int score = 0;
         readonly int gap = 200;
 
         public Form1()
         {
-            InitializeComponent();     
-        }
-        private void gameTimerEvent(object sender, EventArgs e)
+            InitializeComponent();
+            ShowStartMenu();
+
+            GameTimer.Stop();
+        }    
+        private void GameTimerEvent(object sender, EventArgs e)
         {
             pinecone.Top += velocity;
             velocity += acceleration;
 
-            if (pinecone.Bounds.IntersectsWith(treeBottom.Bounds) ||
-                pinecone.Bounds.IntersectsWith(treeTop.Bounds) ||
-                pinecone.Bounds.IntersectsWith(treeBottom2.Bounds) ||
-                pinecone.Bounds.IntersectsWith(treeTop2.Bounds) ||
+            if (pinecone.Bounds.IntersectsWith(logBottom.Bounds) ||
+                pinecone.Bounds.IntersectsWith(logTop.Bounds) ||
+                pinecone.Bounds.IntersectsWith(logBottom2.Bounds) ||
+                pinecone.Bounds.IntersectsWith(logTop2.Bounds) ||
                 pinecone.Top < 0 ||
                 pinecone.Top + pinecone.Height > ClientSize.Height)
             {
                 EndGame();
             }
         }
-        private void treeTimerEvent(object sender, EventArgs e)
+        private void TreeTimerEvent(object sender, EventArgs e)
         {
             Random rnd = new Random();
             Random rnd2 = new Random();
 
-            treeBottom.Left -= treeSpeed;
-            treeTop.Left -= treeSpeed;
+            logBottom.Left -= logSpeed;
+            logTop.Left -= logSpeed;
 
-            treeBottom2.Left -= treeSpeed;
-            treeTop2.Left -= treeSpeed;
+            logBottom2.Left -= logSpeed;
+            logTop2.Left -= logSpeed;
 
-            if (treeTop.Left <= -70)
+            if (logTop.Left <= -70)
             {
-                treeTop.Left = 977;
-                treeTop.Top = rnd.Next(-400, 0);
+                logTop.Left = 977;
+                logTop.Top = rnd.Next(-400, 0);
                 score++;
             }
-            if (treeTop2.Left <= -70)
+            if (logTop2.Left <= -70)
             {
-                treeTop2.Left = 977;
-                treeTop2.Top = rnd2.Next(-400, 0);
+                logTop2.Left = 977;
+                logTop2.Top = rnd2.Next(-400, 0);
                 score++;
             }
-            if (treeBottom.Left <= -70)
+            if (logBottom.Left <= -70)
             {
-                treeBottom.Left = 977;
-                treeBottom.Top = treeTop.Top + treeTop.Height + gap;
+                logBottom.Left = 977;
+                logBottom.Top = logTop.Top + logTop.Height + gap;
             }
-            if (treeBottom2.Left <= -70)
+            if (logBottom2.Left <= -70)
             {
-                treeBottom2.Left = 977;
-                treeBottom2.Top = treeTop2.Top + treeTop2.Height + gap;
+                logBottom2.Left = 977;
+                logBottom2.Top = logTop2.Top + logTop2.Height + gap;
             }
         }
-        private void gameKeyIsDown(object sender, KeyEventArgs e)
+        private void GameKeyIsDown(object sender, KeyEventArgs e)
         {
             if (pinecone.Top > 0 || pinecone.Top + pinecone.Height == ClientSize.Height)
             {
@@ -84,13 +87,13 @@ namespace FP91906
                 }
             }           
         }
-        public void ShowMenu()
+        public void ShowRestartMenu()
         {
             pinecone.Visible = false;
-            treeTop.Visible = false;
-            treeTop2.Visible = false;
-            treeBottom.Visible = false;
-            treeBottom2.Visible = false;
+            logTop.Visible = false;
+            logTop2.Visible = false;
+            logBottom.Visible = false;
+            logBottom2.Visible = false;
 
             title.Visible = true;
             panel.Visible = true;
@@ -100,23 +103,83 @@ namespace FP91906
             RestartBtn.BringToFront();
             ExitBtn.Visible = true;
             ExitBtn.BringToFront();
+            StartBtn.Visible = false;
+            ExitBtn2.Visible = false;
+            label1.Visible = true;
 
             label1.Text = score.ToString();
         }
-        public void HideMenu()
+        public void HideRestartMenu()
         {
             pinecone.Visible = true;
-            treeTop.Visible = true;
-            treeTop2.Visible = true;
-            treeBottom.Visible = true;
-            treeBottom2.Visible = true;
+            pinecone.BackColor = Color.Transparent;
+            pinecone.Location = new Point(117, ClientSize.Height / 2);
+            logTop.Visible = true;
+            logTop2.Visible = true;
+            logBottom.Visible = true;
+            logBottom2.Visible = true;
 
-            treeTop.Left = treeBottom.Left = 449;
-            treeTop2.Left = treeBottom2.Left = 949;
-            treeTop.Top = -236;
-            treeTop2.Top = -280;
-            treeBottom.Top = treeTop.Top + treeTop.Height + gap;
-            treeBottom2.Top = treeTop2.Top + treeTop2.Height + gap;
+            logTop.Left = logBottom.Left = 449;
+            logTop2.Left = logBottom2.Left = 949;
+            logTop.Top = -236;
+            logTop2.Top = -280;
+            logBottom.Top = logTop.Top + logTop.Height + gap;
+            logBottom2.Top = logTop2.Top + logTop2.Height + gap;
+
+            title.Visible = false;
+            panel.Visible = false;
+            panelShadow.Visible = false;
+            scoreTxt.Visible = false;
+            RestartBtn.Visible = false;
+            ExitBtn.Visible = false;
+      
+            velocity = 0;
+            acceleration = 1;
+       
+            pinecone.Top = ClientSize.Height / 2;
+
+            this.Focus();
+            GameTimer.Start();
+            TreeTimer.Start();
+        }
+        public void ShowStartMenu()
+        {
+            pinecone.Visible = true;
+            pinecone.BringToFront();
+            pinecone.BackColor = Color.White;
+            pinecone.Location = new Point((ClientSize.Width/2) - (pinecone.Width/2), ((ClientSize.Height / 2) - (pinecone.Height / 2)) - 40);
+            logTop.Visible = false;
+            logTop2.Visible = false;
+            logBottom.Visible = false;
+            logBottom2.Visible = false;
+
+            title.Visible = true;
+            panel.Visible = true;
+            panelShadow.Visible = true;
+            label1.Visible = false;
+            scoreTxt.Visible = false;
+            StartBtn.Visible = true;
+            ExitBtn2.Visible = true;
+
+        }
+        public void HideStartMenu()
+        {
+            GameTimer.Start();
+
+            pinecone.Visible = true;
+            pinecone.BackColor = Color.Transparent;
+            pinecone.Location = new Point(117, ClientSize.Height / 2);
+            logTop.Visible = true;
+            logTop2.Visible = true;
+            logBottom.Visible = true;
+            logBottom2.Visible = true;
+
+            logTop.Left = logBottom.Left = 449;
+            logTop2.Left = logBottom2.Left = 949;
+            logTop.Top = -236;
+            logTop2.Top = -280;
+            logBottom.Top = logTop.Top + logTop.Height + gap;
+            logBottom2.Top = logTop2.Top + logTop2.Height + gap;
 
             title.Visible = false;
             panel.Visible = false;
@@ -125,40 +188,43 @@ namespace FP91906
             RestartBtn.Visible = false;
             ExitBtn.Visible = false;
 
-            
-
             velocity = 0;
             acceleration = 1;
-       
+
             pinecone.Top = ClientSize.Height / 2;
 
-
             this.Focus();
-            gameTimer.Start();
-            treeTimer.Start();
+            GameTimer.Start();
+            TreeTimer.Start();
         }
         private void EndGame()
         {
-            gameTimer.Stop();
-            treeTimer.Stop();
+            GameTimer.Stop();
+            TreeTimer.Stop();
             
             velocity = 0;
             acceleration = 0;
-      
-            ShowMenu();
+
+            ShowRestartMenu();
         }
         public void RestartBtn_Click(object sender, System.EventArgs e)
         {
-            HideMenu();
+            score = 0;
+            HideRestartMenu();
+        }
+        public void StartBtn_Click(object sender, System.EventArgs e)
+        {
+            HideStartMenu();
         }
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            HideRestartMenu();
+            ShowStartMenu();
+            GameTimer.Stop();
         }
-        private void Countdown_Tick(object sender, EventArgs e)
+        private void ExitBtn2_Click(object sender, EventArgs e)
         {
-            timer--;
-            label2.Text = timer.ToString();
-        }
+            this.Close();
+        }   
     }
 }
