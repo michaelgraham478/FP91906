@@ -47,13 +47,17 @@ namespace FP91906
             this.scoreTxt = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.panelShadow = new System.Windows.Forms.Panel();
-            this.Countdown = new System.Windows.Forms.Timer(this.components);
+            this.CloudTimer = new System.Windows.Forms.Timer(this.components);
+            this.cloud1 = new System.Windows.Forms.PictureBox();
+            this.cloud2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logBottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pinecone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logTop2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logBottom2)).BeginInit();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cloud1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cloud2)).BeginInit();
             this.SuspendLayout();
             // 
             // logTop
@@ -100,6 +104,12 @@ namespace FP91906
             this.TreeTimer.Enabled = true;
             this.TreeTimer.Interval = 15;
             this.TreeTimer.Tick += new System.EventHandler(this.TreeTimerEvent);
+            // 
+            // Cloud
+            // 
+            this.CloudTimer.Enabled = true;
+            this.CloudTimer.Interval = 15;
+            this.CloudTimer.Tick += new System.EventHandler(this.CloudTimerEvent);
             // 
             // logTop2
             // 
@@ -233,6 +243,28 @@ namespace FP91906
             this.panelShadow.TabIndex = 10;
             this.panelShadow.Visible = false;
             // 
+            // cloud1
+            // 
+            this.cloud1.BackColor = System.Drawing.Color.Transparent;
+            this.cloud1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cloud1.BackgroundImage")));
+            this.cloud1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cloud1.Location = new System.Drawing.Point(78, 88);
+            this.cloud1.Name = "cloud1";
+            this.cloud1.Size = new System.Drawing.Size(161, 94);
+            this.cloud1.TabIndex = 11;
+            this.cloud1.TabStop = false;
+            // 
+            // cloud2
+            // 
+            this.cloud2.BackColor = System.Drawing.Color.Transparent;
+            this.cloud2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cloud2.BackgroundImage")));
+            this.cloud2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cloud2.Location = new System.Drawing.Point(748, 269);
+            this.cloud2.Name = "cloud2";
+            this.cloud2.Size = new System.Drawing.Size(130, 83);
+            this.cloud2.TabIndex = 12;
+            this.cloud2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -249,6 +281,8 @@ namespace FP91906
             this.Controls.Add(this.logBottom2);
             this.Controls.Add(this.logTop);
             this.Controls.Add(this.logBottom);
+            this.Controls.Add(this.cloud2);
+            this.Controls.Add(this.cloud1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameKeyIsDown);
@@ -259,6 +293,8 @@ namespace FP91906
             ((System.ComponentModel.ISupportInitialize)(this.logBottom2)).EndInit();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cloud1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cloud2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,9 +315,11 @@ namespace FP91906
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label scoreTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer Countdown;
+        private System.Windows.Forms.Timer CloudTimer;
         private System.Windows.Forms.Button StartBtn;
         private System.Windows.Forms.Button ExitBtn2;
+        private System.Windows.Forms.PictureBox cloud1;
+        private System.Windows.Forms.PictureBox cloud2;
     }
 }
 

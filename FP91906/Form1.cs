@@ -16,8 +16,8 @@ namespace FP91906
         int velocity = 0;
         int acceleration = 1;
 
-        int timerVal = 3;
         int logSpeed = 4;
+        int cloudSpeed = 3;
         int score = 0;
         readonly int gap = 200;
 
@@ -75,6 +75,25 @@ namespace FP91906
             {
                 logBottom2.Left = 977;
                 logBottom2.Top = logTop2.Top + logTop2.Height + gap;
+            }
+        }
+        private void CloudTimerEvent(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            Random rnd2 = new Random();
+
+            cloud1.Left -= cloudSpeed;
+            cloud2.Left -= (cloudSpeed - 1);
+
+            if (cloud1.Left <= -200)
+            {
+                cloud1.Left = 1000;
+                cloud1.Top = rnd.Next(0, (ClientSize.Height/2));
+            }
+            if (cloud2.Left <= -200)
+            {
+                cloud2.Left = 1000;
+                cloud2.Top = rnd2.Next(ClientSize.Height / 2, ClientSize.Height);
             }
         }
         private void GameKeyIsDown(object sender, KeyEventArgs e)
@@ -141,9 +160,12 @@ namespace FP91906
             this.Focus();
             GameTimer.Start();
             TreeTimer.Start();
+            CloudTimer.Start();
         }
         public void ShowStartMenu()
         {
+            CloudTimer.Start();
+
             pinecone.Visible = true;
             pinecone.BringToFront();
             pinecone.BackColor = Color.White;
@@ -160,11 +182,11 @@ namespace FP91906
             scoreTxt.Visible = false;
             StartBtn.Visible = true;
             ExitBtn2.Visible = true;
-
         }
         public void HideStartMenu()
         {
             GameTimer.Start();
+            CloudTimer.Start();
 
             pinecone.Visible = true;
             pinecone.BackColor = Color.Transparent;
@@ -199,6 +221,7 @@ namespace FP91906
         }
         private void EndGame()
         {
+            CloudTimer.Start();
             GameTimer.Stop();
             TreeTimer.Stop();
             
